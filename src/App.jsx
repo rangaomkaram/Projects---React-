@@ -1,7 +1,7 @@
 // import 
 
 import reactImg from './assets/react-core-concepts.png';
-
+import componentsImg from "./assets/components.png";
 
 
 
@@ -38,12 +38,80 @@ function Header() {
 	);
 }
 
+
+// concept of Props : configuring components with 'props'
+// props are immutable -> cannot be changed once passed to a component
+// props are passed from parent to child component
+// React allows you to pass the data to components via a concept called "props"
+
+// Understanding the concept of props
+
+/* 
+
+Here in this example , 
+
+App Component is 
+
+1. Set Props - Props are "Custom HTML attributes" set on components.
+2. Merge into Object - React merges all props into a single object {
+	title : "Components";
+	description : "Core UI"
+}
+3. Receive Props: Props are passed to the component function as the first argument by React
+
+function CoreConcept(props){
+	return <h3>{props.title}</h3>
+}
+
+<CoreConcept 
+title = "compoents"
+description = "Building UI blocks"
+image = {componentsImg}
+
+/>
+
+*/
+
+function CoreConcept(props){
+	return(
+		<li>
+			<img src = {props.image} alt={props.title} />
+			<h3>{props.title}</h3>
+			<p>{props.description}</p>
+		</li>
+	);
+}
+
 function App() {
 	return (
 		<div>
       <Header />
 			<main>
-				<h2>Time to get started!</h2>
+				<section id='core-concepts'>
+					<h2>Core Concepts</h2>
+					<ul>
+						{/* props concept */}
+						{/* props accept all values */}
+						{/* example ->
+						<UserInfo 
+						name="John Doe";
+						age = {34};
+						details = {{username : "John Doe"}}
+						hobbies = {['cooking', 'Reading']}
+						/> */}
+					
+
+						<CoreConcept 
+						    title = "Components" 
+						    description = "The Core UI building blocks"
+							image = {componentsImg}
+						/>
+						<CoreConcept />
+						<CoreConcept />
+						<CoreConcept />
+					</ul>
+				</section>
+
 			</main>
 		</div>
 	)
