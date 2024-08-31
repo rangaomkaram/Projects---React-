@@ -72,7 +72,7 @@ image = {componentsImg}
 
 */
 
-function CoreConcept(props){
+/* function CoreConcept(props){
 	return(
 		<li>
 			<img src = {props.image} alt={props.title} />
@@ -80,7 +80,26 @@ function CoreConcept(props){
 			<p>{props.description}</p>
 		</li>
 	);
+} */
+
+/* Concept of Object Destructuring in Javascript 
+
+Here the props is used to pass the parameter -> instead we can destructure the objects give the same name for parameters.
+
+*/
+
+function CoreConcept({image, title, description}){
+	return(
+		<li>
+			<img src = {image} alt={title}/>
+			<h3>{title}</h3>
+			<p>{description}</p>
+		</li>
+	);
 }
+
+
+
 
 function App() {
 	return (
@@ -101,7 +120,7 @@ function App() {
 						/> */}
 					
 
-						<CoreConcept 
+						{/* <CoreConcept 
 						    title = {CORE_CONCEPTS[0].title}
 						    description = {CORE_CONCEPTS[0].description}
 							image = {CORE_CONCEPTS[0].image}
@@ -119,7 +138,13 @@ function App() {
 							title = {CORE_CONCEPTS[3].title}
 							description = {CORE_CONCEPTS[3].description}
 							image = {CORE_CONCEPTS[3].image}
-						/>
+						/> */}
+
+						{/* Making code improvement -> using curly braces , dynamically and spread operator to get the total data */}
+					     <CoreConcept {...CORE_CONCEPTS[0]}/>
+					     <CoreConcept {...CORE_CONCEPTS[1]}/>
+					     <CoreConcept {...CORE_CONCEPTS[2]}/>
+					     <CoreConcept {...CORE_CONCEPTS[3]}/>
 					</ul>
 				</section>
 
