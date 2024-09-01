@@ -24,6 +24,42 @@ props.children -> The "Children pop" React automatically passes a special prop n
 
 
 */
-function TabButton(){
 
+/* function TabButton(props){
+    return <li><button>{props.children}</button></li>
+
+} */
+
+// Instead we can use destructuring props with children:
+
+/* 
+function TabButton({children}){
+    return <li><button>{children}</button></li>
+} */
+
+// Apporach -2  using label
+
+/* 
+
+Using Children :
+
+1. For the components that take a single piece of renderable content, this apporach is closer to a normal Usage of HTML page.
+
+2. This apporach is especially convenient when passing JSX as a value to another component.
+
+Using Attributes (label):
+
+1. This apporach make sense if you have multiple smaller pieces of inforamtion that must be passed to a component.
+
+2. Adding extra props instead of wrapping the content with component tags means extra work.
+
+
+
+
+*/
+
+function TabButton({label}) {
+    return <li><button>{label}</button></li>
+    
 }
+export default TabButton;
