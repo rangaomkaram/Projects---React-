@@ -55,7 +55,12 @@ function App() {
 				</section>
 				<section id="examples">
 					<menu>
-						
+						{/* <li><button></button></li>
+						<li><button></button></li>
+						<li><button></button></li>
+						<li><button></button></li>
+						instead we can use resuable component */}
+						<TabButton>Components</TabButton>
 					</menu>
 				</section>
 		    </main>
