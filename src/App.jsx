@@ -2,6 +2,7 @@
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
+import TabButton from './components/TabButton.jsx';
 
 
 
@@ -54,13 +55,19 @@ function App() {
 					</ul>
 				</section>
 				<section id="examples">
+					<h2>Examples</h2>
 					<menu>
 						{/* <li><button></button></li>
 						<li><button></button></li>
 						<li><button></button></li>
 						<li><button></button></li>
 						instead we can use resuable component */}
-						<TabButton>Components</TabButton>
+						{/* <TabButton>Components</TabButton> */}
+						{/* apporach - label*/}
+						<TabButton label="Components"></TabButton>
+						<TabButton label="Props"></TabButton>
+						<TabButton label="JSX"></TabButton>
+						<TabButton label="State"></TabButton>
 					</menu>
 				</section>
 		    </main>
