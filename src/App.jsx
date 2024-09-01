@@ -1,24 +1,6 @@
 // import 
-
-import reactImg from './assets/react-core-concepts.png';
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header.jsx';
-
-
-
-// for dynamic output , we use curly braces like object {} 
-// Note : In Curly braces , only use immediate result expression -> don't use for-loops,if-statements,functions
-
-const reactDescriptions = ['Fundamental', "Core", "Essential", "Curical"]
-
-// generate random indexs
-
-function generateRandomindex(max_index) {
-	return Math.floor(Math.random() * (max_index + 1));
-	
-}
-
-
 
 
 // concept of Props : configuring components with 'props'
