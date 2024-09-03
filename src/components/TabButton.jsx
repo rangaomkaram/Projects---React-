@@ -32,10 +32,20 @@ props.children -> The "Children pop" React automatically passes a special prop n
 
 // Instead we can use destructuring props with children:
 
-/* 
+
 function TabButton({children}){
-    return <li><button>{children}</button></li>
-} */
+
+    function clickHandler() {
+        console.log("you clicked ")
+    }
+
+    return(
+    <li>
+        {/* Event listener in react concpet we can directly use built-in Onclick function for button or any */}
+        <button onClick={clickHandler}>{children}</button>
+    </li>
+        ) ;
+}
 
 // Apporach -2  using label
 
@@ -58,8 +68,8 @@ Using Attributes (label):
 
 */
 
-function TabButton({label}) {
+/* function TabButton({label}) {
     return <li><button>{label}</button></li>
     
-}
+} */
 export default TabButton;

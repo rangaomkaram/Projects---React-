@@ -7,6 +7,9 @@ import TabButton from './components/TabButton.jsx';
 
 
 function App() {
+	function SelectHandler() {
+		console.log("Button clicked");
+	}
 	return (
 		<div>
 			{/* Header Component */}
@@ -64,10 +67,17 @@ function App() {
 						instead we can use resuable component */}
 						{/* <TabButton>Components</TabButton> */}
 						{/* apporach - label*/}
-						<TabButton label="Components"></TabButton>
-						<TabButton label="Props"></TabButton>
-						<TabButton label="JSX"></TabButton>
-						<TabButton label="State"></TabButton>
+						{/* <TabButton label="Components" /> */}
+						{/* <TabButton>Components</TabButton>
+						<TabButton>Props</TabButton>
+						<TabButton>JSX</TabButton>
+						<TabButton>State</TabButton> */}
+						{/* To make content Dynamically we use,  below apporach*/}
+						{/* Reacting to Events */}
+						<TabButton onSelect ={SelectHandler} >Components</TabButton>
+						<TabButton onSelect ={SelectHandler} >Props</TabButton>
+						<TabButton onSelect ={SelectHandler} >JSX</TabButton>
+						<TabButton onSelect ={SelectHandler} >State</TabButton>
 					</menu>
 				</section>
 		    </main>
