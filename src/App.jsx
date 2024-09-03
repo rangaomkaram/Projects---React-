@@ -7,8 +7,10 @@ import TabButton from './components/TabButton.jsx';
 
 
 function App() {
-	function SelectHandler() {
-		console.log("Button clicked");
+	// Event Handler Function
+	function selectHandler(buttonSelected) {
+		// button select output in console as : 'components' , 'props', 'jsx', 'state'
+		console.log(buttonSelected);
 	}
 	return (
 		<div>
@@ -74,10 +76,19 @@ function App() {
 						<TabButton>State</TabButton> */}
 						{/* To make content Dynamically we use,  below apporach*/}
 						{/* Reacting to Events */}
-						<TabButton onSelect ={SelectHandler} >Components</TabButton>
+						{/* <TabButton onSelect ={SelectHandler} >Components</TabButton>
 						<TabButton onSelect ={SelectHandler} >Props</TabButton>
 						<TabButton onSelect ={SelectHandler} >JSX</TabButton>
-						<TabButton onSelect ={SelectHandler} >State</TabButton>
+						<TabButton onSelect ={SelectHandler} >State</TabButton> */}
+
+						{/* Passing Custom Arguments to Event Functions */}
+
+						<TabButton onSelect ={()=>selectHandler('components')}>Components</TabButton>
+						<TabButton onSelect={()=>selectHandler('props')}>Props</TabButton>
+						<TabButton onSelect={()=>selectHandler('jsx')}>JSX</TabButton>
+						<TabButton onSelect={()=>selectHandler('state')}>State</TabButton>
+
+
 					</menu>
 				</section>
 		    </main>
