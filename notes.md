@@ -314,3 +314,50 @@ class Calculator {
   }
 }
 ```
+
+```jsx
+// State in React
+
+// State is an object that stores the current state of a component.
+// It is used to store data that changes over time, such as user input, API responses, or other dynamic data.
+
+// Creating State
+import React, { useState } from 'react';
+
+function Counter() {
+  // Declare a state variable 'count' and an 'setCount' function to update it
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+    </div>
+  );
+}
+
+// Updating State
+// Use the 'setCount' function to update the state
+// You can also use the callback function to update the state based on the previous state
+const [count, setCount] = useState(0);
+setCount(prevCount => prevCount + 1);
+
+// Using State in Class Components
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>Increment</button>
+        <button onClick={() => this.setState({ count: this.state.count - 1 })}>Decrement</button>
+      </div>
+    );
+  }
+}
+```

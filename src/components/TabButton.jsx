@@ -34,6 +34,7 @@ props.children -> The "Children pop" React automatically passes a special prop n
 
 
 function TabButton({children, onSelect}){
+    console.log("TabButton Component is Rendering")
     return(
     <li>
         {/* Event listener in react concpet we can directly use built-in Onclick function for button or any */}
@@ -67,4 +68,6 @@ Using Attributes (label):
     return <li><button>{label}</button></li>
     
 } */
+
+
 export default TabButton;

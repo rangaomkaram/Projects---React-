@@ -12,6 +12,8 @@ function App() {
 		// button select output in console as : 'components' , 'props', 'jsx', 'state'
 		console.log(buttonSelected);
 	}
+
+	console.log("App Component Rendering");
 	return (
 		<div>
 			{/* Header Component */}
@@ -90,6 +92,7 @@ function App() {
 
 
 					</menu>
+					
 				</section>
 		    </main>
 		</div>
