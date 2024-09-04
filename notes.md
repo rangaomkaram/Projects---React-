@@ -41,3 +41,276 @@ function TabButton(props){
 
 ```
 
+### How React check if UI updates are needed.
+
+1. React uses a virtual DOM (a lightweight in-memory representation of the real DOM) to optimize rendering.
+2. When the state or props of a component change, React updates the virtual DOM.
+3. React then compares the virtual DOM with the real DOM to determine what changes are needed.
+4. React updates the real DOM by making the necessary changes.
+5. React compares the old output ("old jsx code") of component function to the new output ("new jsx code") and applies any differences  to the actual webiste UI.
+6. React uses a technique called "diffing" to compare the old and new output and determine
+
+### Diffing :
+   1. React builds a new virtual DOM by calling the component's render method.
+   2. React compares the new virtual DOM to the old virtual DOM.
+   3. React determines the minimum number of changes needed to update the real DOM.
+   4. React applies these changes to the real DOM.
+   5. The real DOM is updated, and the UI is refreshed.
+
+Example:
+
+```jsx
+function Clock(props) {
+  return (
+    <div>
+      <h1>{props.date.toLocaleTimeString()}</h1>
+    </div>
+  );
+}
+
+function tick() {
+  ReactDOM.render(
+    <Clock date={new Date()} />,
+    document.getElementById('root')
+  );
+}
+
+setInterval(tick, 1000);
+```
+
+In this example, the `tick` function is called every second, updating the `date` prop of the `Clock` component. React uses diffing to compare the old and new output of the `Clock` component and applies the necessary changes to the real DOM.
+
+```jsx
+import React, { Component } from 'react';
+
+class LifeCycle extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.setState({ date: new Date() }),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.date.toLocaleTimeString()}</h1>
+      </div>
+    );
+  }
+}
+
+export default LifeCycle;
+```
+- update the state with the current date every second, which in turn triggers a re-render of the component. This process continues until the component is unmounted, at which point the clearInterval function is called to stop the timer.
+
+```jsx
+// Interface Segregation Principle (ISP) continued...
+interface Editable {
+  edit(): void;
+}
+
+class TextDocument extends Document implements Editable {
+  edit(): void {
+    console.log("Editing text document");
+  }
+}
+
+// Dependency Inversion Principle (DIP) continued...
+class AdvancedCalculator extends Calculator {
+  private history: number[];
+
+  constructor(logger: Logger) {
+    super(logger);
+    this.history = [];
+  }
+
+  calculate(a: number, b: number): number {
+    const result = super.calculate(a, b);
+    this.history.push(result);
+    return result;
+  }
+
+  getHistory(): number[] {
+    return this.history;
+  }
+}
+```
+```jsx
+// Single Responsibility Principle (SRP)
+// A component should have only one reason to change.
+
+function Profile(props) {
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <p>{props.email}</p>
+    </div>
+  );
+}
+
+// Open/Closed Principle (OCP)
+// A component should be open for extension but closed for modification.
+
+function Button(props) {
+  return <button onClick={props.onClick}>{props.children}</button>;
+}
+
+// Liskov Substitution Principle (LSP)
+// Derived classes should be substitutable for their base classes.
+
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  area() {
+    return this.width * this.height;
+  }
+}
+
+class Square extends Rectangle {
+  constructor(side) {
+    super(side, side);
+  }
+}
+
+// Interface Segregation Principle (ISP)
+// A client should not be forced to depend on interfaces it does not use.
+
+interface Printable {
+  print(): void;
+}
+
+interface Shareable {
+  share(): void;
+}
+
+class Document implements Printable, Shareable {
+  print(): void {
+    console.log("Printing document");
+  }
+
+  share(): void {
+    console.log("Sharing document");
+  }
+}
+
+// Dependency Inversion Principle (DIP)
+// High-level modules should not depend on low-level modules, but both should depend on abstractions.
+
+class Logger {
+  log(message: string): void {
+    console.log(message);
+  }
+}
+
+class Calculator {
+  private logger: Logger;
+
+  constructor(logger: Logger) {
+    this.logger = logger;
+  }
+
+  calculate(a: number, b: number): number {
+    const result = a + b;
+    this.logger.log(`Result: ${result}`);
+    return result;
+  }
+}
+```
+
+```jsx
+// Single Responsibility Principle (SRP)
+// A component should have only one reason to change.
+
+function Profile(props) {
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <p>{props.email}</p>
+    </div>
+  );
+}
+
+// Open/Closed Principle (OCP)
+// A component should be open for extension but closed for modification.
+
+function Button(props) {
+  return <button onClick={props.onClick}>{props.children}</button>;
+}
+
+// Liskov Substitution Principle (LSP)
+// Derived classes should be substitutable for their base classes.
+
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  area() {
+    return this.width * this.height;
+  }
+}
+
+class Square extends Rectangle {
+  constructor(side) {
+    super(side, side);
+  }
+}
+
+// Interface Segregation Principle (ISP)
+// A client should not be forced to depend on interfaces it does not use.
+
+interface Printable {
+  print(): void;
+}
+
+interface Shareable {
+  share(): void;
+}
+
+class Document implements Printable, Shareable {
+  print(): void {
+    console.log("Printing document");
+  }
+
+  share(): void {
+    console.log("Sharing document");
+  }
+}
+
+// Dependency Inversion Principle (DIP)
+// High-level modules should not depend on low-level modules, but both should depend on abstractions.
+
+class Logger {
+  log(message: string): void {
+    console.log(message);
+  }
+}
+
+class Calculator {
+  private logger: Logger;
+
+  constructor(logger: Logger) {
+    this.logger = logger;
+  }
+
+  calculate(a: number, b: number): number {
+    const result = a + b;
+    this.logger.log(`Result: ${result}`);
+    return result;
+  }
+}
+```
