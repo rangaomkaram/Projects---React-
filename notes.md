@@ -361,3 +361,57 @@ class Counter extends React.Component {
   }
 }
 ```
+
+### useState() Yields a array with Two Elements 
+- The `useState()` hook returns an array with two elements: the current state value and a function to update that state value.
+- by using destructuring in Javascript - we can get the two values as shown
+
+```jsx
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  // count is the current state value
+  // setCount is the function to update the state value
+  return (
+    <>
+    <p>Count: {count}</p>
+    </>
+  )
+}
+```
+
+### RULES OF HOOKS
+1. Only call hooks at the top level of your React function. Don't call them inside loops
+2. Only call hooks inside of the Component Fucntions.
+
+### Examples 
+
+- Valid Statements
+
+```jsx
+// Valid expressions for inside of Component Functions
+
+function App(){
+  const [count, setCount] = useState(0);
+}
+
+```
+- Not Valid Statements
+
+```jsx
+// not valid - calling outside functions
+const [count, setCount] = useState(0);
+function App(){
+  // so on
+}
+
+// not valid - calling in nested  code statements
+
+function App(){
+  if(booleanExpression){
+    const[count, setCount] = useSate(0);
+  }
+}
+
+```

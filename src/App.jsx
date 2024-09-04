@@ -1,4 +1,7 @@
 // import 
+// useState - hooks
+
+import { useState } from 'react';
 import { CORE_CONCEPTS } from './data.js';
 import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
@@ -7,6 +10,10 @@ import TabButton from './components/TabButton.jsx';
 
 
 function App() {
+	// hook -useState
+	// rules - must called in inside of components function , toplevel - don't use outside calling , nested code statements 
+
+
 	// Event Handler Function
 	function selectHandler(buttonSelected) {
 		// button select output in console as : 'components' , 'props', 'jsx', 'state'
