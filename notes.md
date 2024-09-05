@@ -415,3 +415,23 @@ function App(){
 }
 
 ```
+
+### Manage State
+
+- Manage data & tell React to re-execute a component function via React's useState() Hook
+- State updates lead to new state values (as the component execute again)
+
+```jsx
+
+const [counter, setCount] = useState(0);
+
+// counter - current state value  provided  by react May change if the function is execute again.
+
+// setCounter(state updating function) :
+/* Update the stored value & "tells" React to re-execute the component function in which useState() was called */
+
+// 0 -> initial State value - Stored by react .
+
+
+
+```

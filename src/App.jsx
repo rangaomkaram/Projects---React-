@@ -13,6 +13,8 @@ function App() {
 	// hook -useState
 	// rules - must called in inside of components function , toplevel - don't use outside calling , nested code statements 
 
+	const [selectConcept, setSelectedConcept] = useState("Please Select the button to learn Concepts")
+
 
 	// Event Handler Function
 	function selectHandler(buttonSelected) {
@@ -99,7 +101,7 @@ function App() {
 
 
 					</menu>
-					
+					{selectConcept}
 				</section>
 		    </main>
 		</div>
