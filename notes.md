@@ -30,7 +30,7 @@ function Course(props){
     return <div id="Course-id">{props.children}</div>
 }
 
-props.children -> The "Children pop" React automatically passes a special prop named "children" to every custom component.
+/* props.children -> The "Children pop" React automatically passes a special prop named "children" to every custom component. */
 
 function TabButton(props){
     return <li><button>{props.children}</button></li>
