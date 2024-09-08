@@ -102,9 +102,9 @@ function App() {
 
 
 					</menu>
-					
-					<div id="tab-content">
 					{!selectConcept ? <p>Please select a concept</p> : null} 
+					<div id="tab-content">
+					
 						{/* <h3>
 							{EXAMPLES[selectConcept].title}
 						</h3>
