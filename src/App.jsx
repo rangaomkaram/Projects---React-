@@ -103,7 +103,16 @@ function App() {
 
 					</menu>
 					{!selectConcept ? <p>Please select a concept</p> : null} 
-					<div id="tab-content">
+					{selectConcept ? <div id="tab-content"><h3>
+						{EXAMPLES[selectConcept].title}
+						</h3>
+						<p>{EXAMPLES[selectConcept].description}</p>
+						<pre>
+							<code>
+								{EXAMPLES[selectConcept].code}
+							</code>
+						</pre>
+					</div> : null}
 					
 						{/* <h3>
 							{EXAMPLES[selectConcept].title}
@@ -117,16 +126,7 @@ function App() {
 						{/* Condtional Rendering */}
 
 					
-						<h3>
-						{EXAMPLES[selectConcept].title}
-						</h3>
-						<p>{EXAMPLES[selectConcept].description}</p>
-						<pre>
-							<code>
-								{EXAMPLES[selectConcept].code}
-							</code>
-						</pre>
-					</div>
+						
 				</section>
 		    </main>
 		</div>
