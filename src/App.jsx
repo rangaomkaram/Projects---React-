@@ -102,9 +102,23 @@ function App() {
 
 
 					</menu>
+					
 					<div id="tab-content">
-						<h3>
+					{!selectConcept ? <p>Please select a concept</p> : null} 
+						{/* <h3>
 							{EXAMPLES[selectConcept].title}
+						</h3>
+						<p>{EXAMPLES[selectConcept].description}</p>
+						<pre>
+							<code>
+								{EXAMPLES[selectConcept].code}
+							</code>
+						</pre> */}
+						{/* Condtional Rendering */}
+
+					
+						<h3>
+						{EXAMPLES[selectConcept].title}
 						</h3>
 						<p>{EXAMPLES[selectConcept].description}</p>
 						<pre>
