@@ -435,3 +435,28 @@ const [counter, setCount] = useState(0);
 
 
 ```
+
+
+### Conditional Rendering 
+- Conditional rendering is a feature in React that allows you to render different components or elements based on a condition.
+- You can use the ternary operator to conditionally render elements.
+- You can use the if-else statement to conditionally render elements.
+- You can use the switch statement to conditionally render elements.
+ 
+
+
+Example:
+```jsx 
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  return (
+    <div>
+      {isLoggedIn ? (
+        <h1>Welcome back!</h1>
+      ) : (
+        <h1>Please sign up.</h1>
+      )}
+    </div>
+  );
+}
+```

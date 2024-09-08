@@ -2,7 +2,7 @@
 // useState - hooks
 
 import { useState } from 'react';
-import { CORE_CONCEPTS , EXAMPLES} from './data.js';
+import { CORE_CONCEPTS, EXAMPLES} from './data.js';
 import Header from './components/Header.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 import TabButton from './components/TabButton.jsx';
@@ -13,7 +13,7 @@ function App() {
 	// hook -useState
 	// rules - must called in inside of components function , toplevel - don't use outside calling , nested code statements 
 
-	const [selectConcept, setSelectedConcept] = useState("Please Select the button to learn Concepts")
+	const [selectConcept, setSelectedConcept] = useState("components")
 
 
 	// Event Handler Function
@@ -102,7 +102,17 @@ function App() {
 
 
 					</menu>
-					{selectConcept}
+					<div id="tab-content">
+						<h3>
+							{EXAMPLES[selectConcept].title}
+						</h3>
+						<p>{EXAMPLES[selectConcept].description}</p>
+						<pre>
+							<code>
+								{EXAMPLES[selectConcept].code}
+							</code>
+						</pre>
+					</div>
 				</section>
 		    </main>
 		</div>

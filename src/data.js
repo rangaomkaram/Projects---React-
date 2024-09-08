@@ -60,19 +60,18 @@ export const EXAMPLES = {
       description:
         'State allows React components to change their output over time in response to user actions, network responses, and anything else.',
       code: `
-  function Counter() {
-    const [isVisible, setIsVisible] = useState(false);
-  
-    function handleClick() {
-      setIsVisible(true);
-    }
-  
-    return (
-      <div>
-        <button onClick={handleClick}>Show Details</button>
-        {isVisible && <p>Amazing details!</p>}
-      </div>
-    );
+import { useState } from 'react';
+function Counter() {
+
+  const [count, setCount] = useState(0);
+      
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+    </div>
+        );
   }`,
     },
   };
