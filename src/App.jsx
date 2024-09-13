@@ -23,6 +23,23 @@ function App() {
 		console.log(selectConcept);
 	}
 
+
+    let tabButtonContent = <p>Please Select Concept</p>
+
+	if(selectConcept){
+			tabButtonContent =	<div id="tab-content">
+							<h3>{EXAMPLES[selectConcept].title}</h3>
+							<p>{EXAMPLES[selectConcept].description}</p>
+							<pre>
+								<code>
+									{EXAMPLES[selectConcept].code}
+								</code>
+							</pre>
+						</div>
+					
+
+			}		
+				
 	console.log("App Component Rendering");
 	return (
 		<div>
@@ -102,7 +119,9 @@ function App() {
 
 
 					</menu>
-					{!selectConcept ? <p>Please select a concept</p> : null} 
+
+					
+					{/* {!selectConcept ? <p>Please select a concept</p> : null} 
 					{selectConcept ? <div id="tab-content"><h3>
 						{EXAMPLES[selectConcept].title}
 						</h3>
@@ -112,7 +131,7 @@ function App() {
 								{EXAMPLES[selectConcept].code}
 							</code>
 						</pre>
-					</div> : null}
+					</div> : null} */}
 					
 						{/* <h3>
 							{EXAMPLES[selectConcept].title}
@@ -125,7 +144,7 @@ function App() {
 						</pre> */}
 						{/* Condtional Rendering */}
 
-					
+					{tabButtonContent}
 						
 				</section>
 		    </main>

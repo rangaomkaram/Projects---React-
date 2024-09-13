@@ -38,7 +38,7 @@ function TabButton({children, onSelect}){
     return(
     <li>
         {/* Event listener in react concpet we can directly use built-in Onclick function for button or any */}
-        <button onClick={onSelect}>{children}</button>
+        <button className = "active"onClick={onSelect}>{children}</button>
     </li>
         ) ;
 }

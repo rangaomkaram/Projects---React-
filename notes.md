@@ -460,3 +460,43 @@ function Greeting(props) {
   );
 }
 ```
+
+```jsx
+{!selectConcept && <p>Please Select Concept</p>}
+					{selectConcept && (
+						<div id="tab-content">
+							<h3>{EXAMPLES[selectConcept].title}</h3>
+							<p>{EXAMPLES[selectConcept].description}</p>
+							<pre>
+								<code>
+									{EXAMPLES[selectConcept].code}
+								</code>
+							</pre>
+						</div>
+					)}
+        {/* {!selectConcept ? <p>Please select a concept</p> : null} 
+					{selectConcept ? <div id="tab-content"><h3>
+						{EXAMPLES[selectConcept].title}
+						</h3>
+						<p>{EXAMPLES[selectConcept].description}</p>
+						<pre>
+							<code>
+								{EXAMPLES[selectConcept].code}
+							</code>
+						</pre>
+					</div> : null} */}
+					
+						{/* <h3>
+							{EXAMPLES[selectConcept].title}
+						</h3>
+						<p>{EXAMPLES[selectConcept].description}</p>
+						<pre>
+							<code>
+								{EXAMPLES[selectConcept].code}
+							</code>
+						</pre> */}
+						{/* Condtional Rendering */}
+
+
+
+```
