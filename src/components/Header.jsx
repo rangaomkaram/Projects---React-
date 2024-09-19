@@ -4,7 +4,7 @@ import reactImg from '../assets/react-core-concepts.png';
 // for dynamic output , we use curly braces like object {} 
 // Note : In Curly braces , only use immediate result expression -> don't use for-loops,if-statements,functions
 
-const reactDescriptions = ['Fundamental', "Core", "Essential", "Curical"]
+const reactDescriptions = ['Fundamental', "Core", "Essential", "Important"]
 
 // generate random indexs
 

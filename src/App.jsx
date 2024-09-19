@@ -112,10 +112,11 @@ function App() {
 
 						{/* Passing Custom Arguments to Event Functions */}
 
-						<TabButton onSelect ={()=>selectHandler('components')}>Components</TabButton>
-						<TabButton onSelect={()=>selectHandler('props')}>Props</TabButton>
-						<TabButton onSelect={()=>selectHandler('jsx')}>JSX</TabButton>
-						<TabButton onSelect={()=>selectHandler('state')}>State</TabButton>
+						<TabButton isSelected={selectConcept === 'components'} onSelect ={()=>selectHandler('components')}>Components</TabButton>
+
+						<TabButton isSelected = {selectConcept === 'props'}onSelect={()=>selectHandler('props')}>Props</TabButton>
+						<TabButton isSelected = {selectConcept === 'jsx'} onSelect={()=>selectHandler('jsx')}>JSX</TabButton>
+						<TabButton isSelected ={selectConcept === 'state'} onSelect={()=>selectHandler('state')}>State</TabButton>
 
 
 					</menu>

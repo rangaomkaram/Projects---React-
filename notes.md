@@ -500,3 +500,6 @@ function Greeting(props) {
 
 
 ```
+1. listing output the dynamically
+2. we can style the dynamically using the state management technique
+
