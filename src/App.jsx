@@ -82,10 +82,12 @@ function App() {
 					{/* CoreConcept Component */}
 
 						{/* Making code improvement -> using curly braces , dynamically and spread operator to get the total data */}
-					     <CoreConcept {...CORE_CONCEPTS[0]}/>
+					     {/* <CoreConcept {...CORE_CONCEPTS[0]}/>
 					     <CoreConcept {...CORE_CONCEPTS[1]}/>
 					     <CoreConcept {...CORE_CONCEPTS[2]}/>
-					     <CoreConcept {...CORE_CONCEPTS[3]}/>
+					     <CoreConcept {...CORE_CONCEPTS[3]}/> */}
+						 {/* progamming dynamically using map function to list out the all items  */}
+						 {CORE_CONCEPTS.map(listItem => <CoreConcept {...listItem}/> )}
 					</ul>
 				</section>
 				<section id="examples">
