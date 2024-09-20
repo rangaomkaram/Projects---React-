@@ -497,9 +497,24 @@ function Greeting(props) {
 						</pre> */}
 						{/* Condtional Rendering */}
 
-
-
 ```
-1. listing output the dynamically
+
+1. List out the items dynamically
+
+```jsx
+// using map functions , we can list out the items dynamically
+
+<ul>
+// using map functions , we can list out the items dynamically
+
+<ul>
+{items.map((item, index) => (
+  <li key={index}>{item}</li>
+))}
+
+</ul>
+{TODOLIST.map(listItem =><Todo{...listItem}/> )}
+</ul>
+```
 2. we can style the dynamically using the state management technique
 
