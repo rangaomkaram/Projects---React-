@@ -20,7 +20,7 @@ function App() {
 	function selectHandler(buttonSelected) {
 		// button select output in console as : 'components' , 'props', 'jsx', 'state'
 		setSelectedConcept(buttonSelected)
-		console.log(selectConcept);
+		// console.log(selectConcept);
 	}
 
 
@@ -40,9 +40,10 @@ function App() {
 
 			}		
 				
-	console.log("App Component Rendering");
+	// console.log("App Component Rendering");
 	return (
-		<div>
+		// concept of fargment
+		<>
 			{/* Header Component */}
       <Header />
 			<main>
@@ -156,7 +157,7 @@ function App() {
 						
 				</section>
 		    </main>
-		</div>
+		</>
 	)
 }
 
