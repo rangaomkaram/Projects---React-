@@ -634,3 +634,7 @@ function Greeting(props) {
 				</section> */}
 
 ```
+
+- Spilting Components by Feature and State
+- Props are not forwarded to inner Elements
+  1. Forwarding props to wrapped Elements
