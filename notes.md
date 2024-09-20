@@ -507,6 +507,7 @@ function Greeting(props) {
 <ul>
 // using map functions , we can list out the items dynamically
 
+// concept of key prop , used to render each child in a list -> which helps to give unique value (id)
 <ul>
 {items.map((item, index) => (
   <li key={index}>{item}</li>
