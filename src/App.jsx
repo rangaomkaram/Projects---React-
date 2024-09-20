@@ -87,7 +87,12 @@ function App() {
 					     <CoreConcept {...CORE_CONCEPTS[2]}/>
 					     <CoreConcept {...CORE_CONCEPTS[3]}/> */}
 						 {/* progamming dynamically using map function to list out the all items  */}
-						 {CORE_CONCEPTS.map(listItem => <CoreConcept {...listItem}/> )}
+						 {/* {CORE_CONCEPTS.map(listItem => <CoreConcept {...listItem}/> )} */}
+
+						 {/* using key prop */}
+						{CORE_CONCEPTS.map((conceptList)=>{
+						return	<CoreConcept key={conceptList.title} {...conceptList}/>
+						})}
 					</ul>
 				</section>
 				<section id="examples">
