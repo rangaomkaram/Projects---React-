@@ -32,13 +32,13 @@ props.children -> The "Children pop" React automatically passes a special prop n
 
 // Instead we can use destructuring props with children:
 
-
-function TabButton({children, onSelect, isSelected}){
+// rest operator to get data from the objects
+function TabButton({children, isSelected, ...props}){
     // console.log("TabButton Component is Rendering")
     return(
     <li>
         {/* Event listener in react concpet we can directly use built-in Onclick function for button or any */}
-        <button className = {isSelected ? 'active': undefined} onClick={onSelect}>{children}</button>
+        <button className = {isSelected ? 'active': undefined} {...props}>{children}</button>
     </li>
         ) ;
 }
